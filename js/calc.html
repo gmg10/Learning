@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input,button{
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CALCULATOR</h1><br>
+    <input type="text" placeholder="num1" id="num1"><br>
+    <input type="password" placeholder="num2" id="num2"><br>
+    <button onclick="Add()">ADD</button><br>
+    <button onclick="Sub()">SUBTRACT</button><br>
+    <button onclick="Multiply()">MULTIPLY</button><br>
+    <button onclick="Divide()">DIVIDE</button><br>
+</body>
+</html>
+
+<script>
+    function Add(){
+        var num1 = Number(document.getElementById('num1').value)
+        var num2 = Number(document.getElementById('num2').value)
+        alert(num1+num2)
+    }
+    function Sub(){
+        var num1 = Number(document.getElementById('num1').value)
+        var num2 = Number(document.getElementById('num2').value)
+        alert(num1-num2)
+    }
+    function Multiply(){
+        var num1 = Number(document.getElementById('num1').value)
+        var num2 = Number(document.getElementById('num2').value)
+        alert(num1*num2)
+    }
+    function Divide(){
+        var num1 = Number(document.getElementById('num1').value)
+        var num2 = Number(document.getElementById('num2').value)
+        alert(num1/num2)
+    }
+</script>

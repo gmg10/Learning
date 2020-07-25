@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!-- saved from url=(0127)file:///C:/Users/Hp/Desktop/Programming/HTML,%20CSS,%20&%20JavaScript%20to%20Build%20Interactive%20Web%20Pages/js/cssclock.html -->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>JS + CSS Clock</title>
+</head>
+
+<body>
+
+
+    <div class="clock">
+        <div class="clock-face">
+            <div class="hand hour-hand"></div>
+            <div class="hand min-hand"></div>
+            <div class="hand second-hand" style="
+            transform: rotate(130deg);
+            transition-timing-function: cubic-bezier(0, 3.32, 1, 1.8);
+            "></div>
+        </div>
+    </div>
+
+    <!-- <h1 id='timeNow'></h1> -->
+
+
+    <style>
+        html {
+            background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+            /* background: #018DED url(https://c4.wallpaperflare.com/wallpaper/845/681/229/chelsea-fc-wallpaper-preview.jpg); */
+            background-size: cover;
+            font-family: 'helvetica neue';
+            text-align: center;
+            font-size: 10px;
+        }
+        
+        body {
+            margin: 0;
+            font-size: 2rem;
+            display: flex;
+            flex: 1;
+            min-height: 100vh;
+            align-items: center;
+        }
+        
+        .clock {
+            width: 30rem;
+            height: 30rem;
+            border: 20px solid white;
+            border-radius: 50%;
+            margin: 50px auto;
+            position: relative;
+            padding: 2rem;
+            box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #EFEFEF, inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .clock-face {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform: translateY(-3px);
+            /* account for the height of the clock hands */
+        }
+        
+        .hand {
+            width: 50%;
+            height: 6px;
+            background: black;
+            position: absolute;
+            top: 50%;
+            transform-origin: 100%;
+            transform: rotate(90deg);
+            transition: all 0.05s;
+        }
+    </style>
+
+    <script>
+        const secondHand = document.querySelector('.second-hand')
+
+        const minuteHand = document.querySelector('.min-hand')
+
+        const hourHand = document.querySelector('.hour-hand')
+
+
+
+
+
+
+
+
+
+        function setDate() {
+            const now = new Date();
+
+            const seconds = now.getSeconds();
+            const secondDegrees = ((seconds / 60) * 360 + 90);
+            secondHand.style.transform = `rotate(${secondDegrees}deg)`;
+
+            const minutes = now.getMinutes();
+            const minuteDegrees = (minutes / 60) * 360 + 90;
+            minuteHand.style.transform = `rotate(${minuteDegrees}deg)`;
+
+
+            const hours = now.getHours();
+            const hourDegrees = (hours / 60) * 360;
+            hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+
+            var text = hours + ':' + minutes + ':' + seconds;
+
+        }
+        setInterval(setDate, 1000)
+    </script>
+
+
+</body>
+
+</html>
