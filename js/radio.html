@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input,
+        button,
+        select {
+            margin-top: 10px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    </style>
+    <input type="radio" name="languages" value='JavaScript'>JavaScript<br>
+    <input type="radio" name="languages" value='Python'>Python<br>
+    <input type="radio" name="languages" value='C++'>C++<br>
+    <h1>The selected language is...</h1> <br>
+    <h1 id='result'></h1>
+    <button onclick="Language()">Display</button><br>
+
+
+    <select id="movies" onchange="showMovie()">
+        <option value="Dark Knight">Dark Knight</option>
+        <option value="Dark Knight Rises">Dark Knight Rises</option>
+        <option value="Batman Begins">Batman Begins</option>
+       
+
+
+
+    </select>
+
+
+
+
+</body>
+
+</html>
+
+<script>
+    function Language() {
+        var languages = document.getElementsByName('languages')
+        for (var i = 0; i < languages.length; i++) {
+
+            if (languages[i].checked) {
+                document.getElementById("result").innerHTML = languages[i].value
+
+            }
+
+        }
+
+    }
+
+    function showMovie() {
+        var movies = document.getElementById('movies').value
+
+        document.getElementById("result").innerHTML = movies
+
+
+
+
+
+    }
+</script>
